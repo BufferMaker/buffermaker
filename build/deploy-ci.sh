@@ -3,7 +3,7 @@ mkdir temp_web
 git config --global user.name "buffermaker"
 git config --global user.email "www.cctv1688@qq.com"
 
-TRAVIS_TAG=1.0
+TRAVIS_TAG='v1.0'
 
 # release
 if [ "$TRAVIS_TAG" ]; then
