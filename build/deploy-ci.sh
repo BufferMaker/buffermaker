@@ -12,6 +12,7 @@ if [ "$TRAVIS_TAG" ]; then
   git clone https://github.com/BufferMaker/buffermaker.github.io.git && cd buffermaker.github.io
   git tag $TRAVIS_TAG -m "[build] $TRAVIS_TAG"
   git push origin $TRAVIS_TAG
+  rm -rf *
   cd ../..
 
   # build site
