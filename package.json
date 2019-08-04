@@ -12,7 +12,7 @@
     "lint": "eslint --ext .js,.vue src test/unit",
     "fix": "eslint --fix src",
     "build": "node build/build.js",
-    "build:site": "node build/build.js && echo www.buffermaker.top>>dist/CNAME"
+    "build:site": "node build/build.js && echo www.buffermaker.top>dist/CNAME"
   },
   "dependencies": {
     "vue": "^2.5.2",
