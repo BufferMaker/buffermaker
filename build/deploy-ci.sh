@@ -12,17 +12,13 @@ if [ "$TRAVIS_TAG" ]; then
   git clone https://github.com/BufferMaker/buffermaker.github.io.git && cd buffermaker.github.io
   git tag $TRAVIS_TAG -m "[build] $TRAVIS_TAG"
   git push origin $TRAVIS_TAG
-  rm -rf *
-  cd ../..
 
   # build site
   npm run build:site
-  cd temp_web
-  git clone --depth 1 -b gh-pages --single-branch https://github.com/BufferMaker/buffermaker.github.io.git && cd buffermaker.github.io
   # build sub folder
   echo $TRAVIS_TAG
 
-  SUB_FOLDER='1.0'
+  SUB_FOLDER='v1.0'
   TRAVIS_COMMIT_MSG="[deploy] $(git log --format='%h - %B' --no-merges -n 1)"
   mkdir SUB_FOLDER
   rm -rf *.js *.css *.map static
@@ -33,6 +29,7 @@ if [ "$TRAVIS_TAG" ]; then
   git commit -m "$TRAVIS_COMMIT_MSG"
   git push origin gh-pages
   cd ../..
+  rm -rf temp_web
 
   echo "DONE, Bye~"
   exit 0
