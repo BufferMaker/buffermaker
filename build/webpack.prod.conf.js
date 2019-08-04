@@ -11,8 +11,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
-const VueSSRClientPlugin = require('vue-server-renderer/client-plugin')
-
 // const env = process.env.NODE_ENV === 'testing'
 //   ? require('../config/test.env')
 //   : require('../config/prod.env')
@@ -80,7 +78,6 @@ const webpackConfig = merge(baseWebpackConfig, {
     //   // necessary to consistently work with multiple chunks via CommonsChunkPlugin
     //   chunksSortMode: 'dependency'
     // }),
-    new VueSSRClientPlugin(),
     // keep module.id stable when vendor modules does not change
     new webpack.HashedModuleIdsPlugin(),
     // enable scope hoisting
