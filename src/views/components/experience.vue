@@ -230,7 +230,7 @@ export default {
                     left: @flagWidth + @width + 1px;
                     width: @width;
                     height: 100%;
-                    background-color: #f80664e6;
+                    background-color: rgba(248, 6, 100, 0.9);
                     z-index: 2;
                 }
             }
