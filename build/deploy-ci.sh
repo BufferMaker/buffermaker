@@ -3,7 +3,7 @@ mkdir temp_web
 git config --global user.name "buffermaker"
 git config --global user.email "www.cctv1688@qq.com"
 
-TRAVIS_TAG='v1.0'
+TRAVIS_TAG='v1.1'
 
 # release
 if [ "$TRAVIS_TAG" ]; then
@@ -21,7 +21,7 @@ if [ "$TRAVIS_TAG" ]; then
   # build sub folder
   echo $TRAVIS_TAG
 
-  SUB_FOLDER='v1.0'
+  SUB_FOLDER=$TRAVIS_TAG
   TRAVIS_COMMIT_MSG="[deploy] $(git log --format='%h - %B' --no-merges -n 1)"
   mkdir $SUB_FOLDER
   rm -rf *.js *.css *.map static
