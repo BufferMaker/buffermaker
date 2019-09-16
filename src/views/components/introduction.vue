@@ -45,6 +45,8 @@ export default {
         technical: [
           { message: '熟练掌握CSS3+HTML5+JavaScript等前端技术，能快速的完成静态页面的构建;' },
           { message: '熟悉CSS预处理器LESS/SASS的基本用法，对前端模块化AMD(RequestJS)、CMD开发有一定的认知;' },
+          { message: '熟悉Webpack,Rollup,Gulp等前端工程化构建框架;' },
+          { message: '熟悉Git,SVN,TFS,teambition团队协作与代码管理工具;' },
           { message: '熟悉Ajax、DOM结构操作技术，掌握面向对象编程思想，了解浏览器内部工作原理和必备的浏览器开发调试工具和HTTP网络协议;' },
           { message: '熟练掌握JQuery、JQuery-EasyUI、Bootstrap、Vue全家桶并了解AngularJS等前端类库和框架;' },
           { message: '基于NodeJS平台结合Webpack、Mock、Element、Vue全家桶等技术栈进行前端开发与维护，并了解基于Gulp等前端自动化打包库的相关项目配置;' },
@@ -57,7 +59,9 @@ export default {
         ],
         evalute: [
           { message: '热爱前端编程，掌握扎实的编程技能，具有良好的自学能力，对新技术拥有强烈的好奇心和求知欲;' },
-          { message: '有一定的后端开发经验，对于前后端分离开发、协调与数据接口定制与测试能起到至关重要;' },
+          { message: '工作中对代码质量要求极高,实现功能的同时美观,简洁,易懂;' },
+          { message: '工作效率高,自我学习能力强;' },
+          { message: '有全栈基础,较强的综合能力' },
           { message: '具有良好的沟通能力和团队协作精神，富有工作激情、责任感和抗压能力。' }
         ]
       }
