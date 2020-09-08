@@ -8,7 +8,7 @@
                         <li>
                             <span :style="flagAnimationDelay()" class="flag">{{item.year}}<i class="icon iconfont icon-year"></i></span>
                         </li>
-                        <li v-for="_incident in item.incident" :key="_incident.time">
+                        <li v-for="_incident in item.incident" :key="item.year + _incident.time">
                             <span :style="flagAnimationDelay()" class="flag">{{_incident.time}}<i class="icon iconfont icon-month"></i></span>
                             <span :style="flagAnimationDelay()" v-if="_incident.describe.trim().length > 0" class="describe">{{_incident.describe}}</span>
                         </li>
@@ -37,67 +37,37 @@ export default {
     return {
       showCompanyFlag: false,
       experience: [{
-        year: '2015年',
-        incident: [{
-          time: '11月',
-          describe: '经过学校老师的推荐，成功进入了一家外包公司实习（广西深睿科技有限公司）。'
-        }, {
-          time: '12月',
-          describe: '在公司中第一次接触项目，痛并快乐着（好多东西都不懂- -）。'
-        }]
-      }, {
-        year: '2016年',
-        incident: [{
-          time: '1月',
-          describe: '终于把个人任务做完了（第一次感觉CV工程师的厉害之处0 0）。'
-        }, {
-          time: '3月',
-          describe: '人生第一个项目上线了，内心那个激动啊（我估计我开发的那个NodeJS推送服务现在还在跑）'
-        }, {
-          time: '6月',
-          describe: '继续在公司跟着做项目，然而我竟然被安排去做前端了（前端掉坑之旅）'
-        }, {
-          time: '10月',
-          describe: '配合项目成功上线！！这次是关于某教育机构的OA管理系统，还要移动端适配（在移动端神坑中摸爬滚打，终于熬出来了）'
-        }, {
-          time: '12月',
-          describe: '参加了蓝桥杯大赛，一不小心在省赛中拿了个一等奖，获得去参加国赛的资格（全程一脸懵逼）'
-        }]
-      }, {
         year: '2017年',
         incident: [
           {
             time: '3月',
-            describe: '成功把毕业设计做完，采用Hybrid方式开发一款离线音乐播放器App，我自己都嫌弃（真的太low了，但是我也是我第一次用Vue全家桶）'
+            describe: '完成毕业设计，采用Hybrid方式开发一款离线音乐播放器App，基于原生的文件读取并解析音频meta信息，界面采用webview形式展示'
           }, {
             time: '5月',
-            describe: '参加国赛，去了北京（那个激动啊），然后也是一脸懵逼获得了个三等奖（其实我的目的是去旅游哈哈哈~~~）'
+            describe: '参加蓝桥杯国赛，可能是练习还是不够，仅仅获得了三等奖'
           }, {
             time: '6月',
-            describe: '毕业了，在老师的在此推荐下，我以全栈工程师的身份进入了人生第一家公司（这里指以正式员工身份呆着，对此公司的评价此处省略一万字。。）'
+            describe: '入职深圳昂纳科技有限公司技术部综合组，主要是做公司OA流程业务'
           }, {
             time: '10月',
-            describe: '在工作要求下，采用前后端分离的方式构建了对接该公司OA系统的辅助系统->报表系统，主要是对OA系统中流程数据做定制化报表模板并提供用户浏览（vue全家桶- -又来了）'
+            describe: '年底公司各部门需要各种报表数据查看做明年预算，然后加班加点完成报表系统并集成到OA系统'
           }
         ]
       }, {
         year: '2018年',
         incident: [
           {
-            time: '2月',
-            describe: '成功拿到离职证明（主要是因为这个工作氛围让我受不了，说多都是泪~~~~~~~~）'
-          }, {
             time: '6月',
-            describe: '以前端工程师的身份加入华风海洋大家庭，并参与康源医疗管理系统（基于Vue全家、ElementUI开发的）'
+            describe: '加入华风海洋大家庭，并参与康源医疗管理系统主要是ElementUI做基础UI组件'
           }, {
-            time: '9月',
+            time: '8月',
             describe: '康源医疗管理系统上线并交付用户，紧接着被安排到重构公司一款自主产品<海岛团建游>的后台管理系统；管理系统是基于Ext框架开发，然后觉得采用vue进行重构（此处小声逼逼，之前的代码真是杂乱无章，怪不得要重构）'
           }, {
             time: '9月',
             describe: '海约后台管理系统重构至中期，因为项目需要临时被分配至渔港项目组，进行洪湾渔港交易平台的PC端开发'
           }, {
             time: '11月',
-            describe: '洪湾渔港交易平台一期定版，紧接着需要开发基于微信工作平台的H5端（能力越大责任越大啊~~~~~）'
+            describe: '洪湾渔港交易平台一期定版，紧接着需要开发基于微信工作平台的H5端'
           }, {
             time: '12月',
             describe: '洪湾渔港交易平台一期交付用户并上线，开始进入一期维护阶段'
@@ -118,11 +88,57 @@ export default {
             describe: '经过一个半月的奋战，小程序上线。持续进行后期维护跟进工作'
           }, {
             time: '9月',
-            describe: '结束了华风大家庭的学习生活之旅，虽然疲惫但很充实。未完待续·····'
+            describe: '结束了华风大家庭的学习生活之旅，虽然疲惫但很充实'
+          }, {
+            time: '10月',
+            describe: '偶然机会加入了省广集团大数据部门，主要负责基础建设工作（公司的sass平台维护与迭代'
+          }, {
+            time: '11月',
+            describe: '集团广告合作方屈臣氏做广告线下转线上战略调整，需要给他们开发定制化的广告投放平台并以集团的营销Sass平台作为数据分析基础'
+          }, {
+            time: '12月',
+            describe: '商品广告位、package资源的复杂关系导致购物车、订单面临巨大挑战，努力克服中····'
+          }
+        ]
+      }, {
+        year: '2020年',
+        incident: [
+          {
+            time: '1月',
+            describe: '屈臣氏Media Platform 1.0平台上线成功。紧接着放假了(疫情来了···'
+          },
+          {
+            time: '2月',
+            describe: '疫情躲在家里面····并远程完成了Media Platform1.1迭代。主要是KOL监测、小程序报表监测等监测报表的功能'
+          }, {
+            time: '3月',
+            describe: '疫情风声变小，开始上班。进行屈臣氏1.2版本迭代，并被安排做H5落地页项目'
+          }, {
+            time: '4月',
+            describe: '屈臣氏迭代1.3版本，集团和红旗合作为红旗H9新车做广告投放，需要一款推广运营平台(实际上也是线下转线上模式调整。'
+          }, {
+            time: '6月',
+            describe: '红旗空间1.0开发接近尾声，屈臣氏2.0开始启动。基础项目架构组件库维护工作交到我这里，简称基建~'
+          }, {
+            time: '7月',
+            describe: '红旗空间1.0交付，并开始进行功能优化与迭代，屈臣氏2.0开发持续进行中··'
+          }, {
+            time: '8月',
+            describe: '集团架构与部门大调整。业务方向变化。。'
+          }, {
+            time: '9月',
+            describe: '找工作中·····'
           }
         ]
       }],
       compnayList: [{
+        name: '广东省广告集团股份有限公司',
+        job: '前端工程师',
+        startTime: '2019.10',
+        endTime: '2020.09',
+        responsibility: '负责公司红旗空间小程序/红旗运营平台、屈臣氏MediaPlatform、广告全营销Sass系统、H5落地页、 基础项目平台建设与维护',
+        tags: ['Html5', 'CSS3', 'JavaScript', 'Vue全家桶', 'NodeJS', 'SCSS', 'Webpack', 'gulp', '小程序', 'ElementUI']
+      }, {
         name: '广东华风海洋信息系统服务有限公司',
         job: '前端工程师',
         startTime: '2018.06',
@@ -131,14 +147,14 @@ export default {
         tags: ['Html5', 'CSS3', 'JavaScript', 'Vue全家桶', 'NodeJS', 'SCSS', 'Webpack', '小程序', 'ElementUI', 'VantUI', 'MintUI']
       }, {
         name: '昂纳信息技术(深圳)有限公司',
-        job: '全栈工程师',
+        job: '前端工程师',
         startTime: '2017.07',
         endTime: '2018.02',
         responsibility: '负责公司OA系统的二次开发与维护，对原系统Java底层功能的优化和改进，并采用VueJS等前端技术独立开发了一套可配置的模板报表系统与OA系统对接集成，主要涉及项目前端开发。工作之余学习了相关Web前端的各种新兴技术Webpack、Canvas等',
         tags: ['Java', 'Html5', 'CSS3', 'JavaScript', 'Jquery', 'NodeJS', 'Vue', 'Webpack', 'Less', 'Sqlserver', 'ElementUI']
       }, {
         name: '广西深睿科技有限公司',
-        job: '全栈工程师',
+        job: '前端工程师',
         startTime: '2015.12',
         endTime: '2017.06',
         responsibility: '负责公司的外包Web项目的整体开发，运用Nodejs、Java、JQuery、MUI、EasyUI等技术并采用前端端分离的开发模式进行协作。主要涉及最多的是服务的端的开发，其中也采用NodeJs集成了极光推送API的脚本插件。',

@@ -1,9 +1,10 @@
 <template>
 	<div>
       <ul class="produceList">
-          <li v-for="produce in producelist" :key="produce.id">
+          <li v-for="produce in producelist" :key="produce.id" @click="produce.showImage = !produce.showImage">
               <a :href="produce.address" target="_banck">{{produce.title}}</a>
               <h2>{{produce.introduction}}</h2>
+              <img v-if="produce.image && produce.showImage" class="mini-image" :src="produce.image" :alt="produce.alt">
           </li>
       </ul>
   </div>
@@ -22,10 +23,14 @@ export default {
       producelist: this.list
     }
   },
-  mnethods: { },
+  methods: { },
   watch: {
-    list(val) {
-      this.producelist = val
+    list: {
+      immediate: true,
+      handler(val) {
+        this.producelist = val
+        this.producelist.forEach(v => { this.$set(v, 'showImage', false) })
+      }
     }
   }
 }
@@ -61,6 +66,13 @@ export default {
                 line-height: 1.2em;
                 font-weight: 400;
             }
+        }
+
+        .mini-image {
+          display: block;
+          width: 200px;
+          height: 200px;
+          margin: 0 auto;
         }
     }
 </style>

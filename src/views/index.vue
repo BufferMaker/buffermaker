@@ -40,6 +40,16 @@
             components: 'produceList',
             props: {
               list: [{
+                title: '红旗小程序',
+                address: 'JavaScript: void(0);',
+                image: '~@/../static/img/hq-mini.png',
+                alt: '红旗空间小程序二维码',
+                introduction: '红旗车展、预约试驾、线上直播等推广活动产品'
+              }, {
+                title: '屈臣氏Media Platform',
+                address: 'http://gimcdev.gimcyun.com/frontend/',
+                introduction: '屈臣氏广告媒体投放平台'
+              }, {
                 title: '洪湾渔港交易平台',
                 address: 'https://www.hongwanyg.com/',
                 introduction: '海鲜卖家和买家撮合交易的电子商务平台'
@@ -50,6 +60,8 @@
               }, {
                 title: '海约海钓团建小程序',
                 address: 'JavaScript: void(0);',
+                image: '~@/../static/img/hy-mini.png',
+                alt: '海约海钓团建小程序二维码',
                 introduction: '周边海岛美宿、观光、亲子研学、海鲜、海钓等旅游产品及活动的相关服务'
               }]
             }
